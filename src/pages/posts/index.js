@@ -2,7 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import Spinner from "@/components/Spinner";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
+import * as fs from 'fs'
 const PostPage = ({allBlogs}) => {
   const [blogPosts, setBlogPosts] = useState(null);
   useEffect(()=>{
@@ -30,13 +30,18 @@ const PostPage = ({allBlogs}) => {
   );
 };
 export default PostPage;
-export async function getServerSideProps(context) {
-  let data = await fetch("http://localhost:3000/api/blogs")
-  let res = await data.json()
+export async function getStaticProps(context) {
+  let data = await fs.promises.readdir("blogData")
+  let myFile
+  let allBlogs = []
+  for (let index = 0; index < data.length; index++) {
+      const item = data[index];
+      myFile = await fs.promises.readFile(('blogData/'+item),'utf-8')
+      allBlogs.push(JSON.parse(myFile))
+
+  }
       
   return {
-    props: {
-      allBlogs:res
-    }, // will be passed to the page component as props
+    props: {allBlogs} // will be passed to the page component as props
   }
 }

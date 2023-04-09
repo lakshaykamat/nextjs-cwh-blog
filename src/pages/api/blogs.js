@@ -10,12 +10,4 @@ export default async function handler(req,res){
 
     }
     res.status(200).json(allBlogs)
-    // (err,data)=>{
-    //     data.forEach((item)=>{
-    //         fs.readFile(("blogData/" + item),(d)=>{
-    //             allBlogs.push(d)
-    //         })
-    //     })
-    //     res.status(200).json(allBlogs)
-    // })
 }

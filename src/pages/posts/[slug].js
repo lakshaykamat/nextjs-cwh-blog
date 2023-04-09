@@ -1,16 +1,16 @@
 import Spinner from '@/components/Spinner';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React, {  useState } from 'react'
+import * as fs from 'fs'
+
 const BlogDetailPage = ({blogContents}) => {
+
   const [blogContent, setBlogContent] = useState(blogContents)
 
   if (!blogContent) {
     return <Spinner/>
   }
-  if (blogContent.error) {
-    router.push('/404')
-  }
+  
   return (
     <>
       <style>{`
@@ -38,15 +38,23 @@ const BlogDetailPage = ({blogContents}) => {
 }
 
 export default BlogDetailPage
-export async function getServerSideProps(context) {
-  const { slug } = context.query
-  let data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`)
-  let res = await data.json()
 
+export async function getStaticPaths(){
+  return {
+    paths:[
+      {params:{slug: 'how-to-learn-javascript'}}
+    ],
+    fallback:true
+  }
+}
+export async function getStaticProps(context) {
+  const { slug } = context.params
+
+  let res = await fs.promises.readFile(`blogData/${slug}.json`, 'utf-8')
 
   return {
     props: {
-      blogContents:res
+      blogContents:JSON.parse(res)
     }, // will be passed to the page component as props
   }
 }
