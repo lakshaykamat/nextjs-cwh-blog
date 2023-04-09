@@ -1,0 +1,8 @@
+{
+    "title":"How to learn Javascript",
+    "author":"Jhon Doe",
+    "date": "April 1, 2023",
+    "content":"<p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in metus id odio luctus consequat. Integer sagittis eleifend urna, sit amet bibendum est dapibus et. Duis vestibulum felis elit, et iaculis urna volutpat at. Fusce eu enim quis justo eleifend aliquet. Curabitur dignissim blandit malesuada. Aenean vehicula ullamcorper ex, et fringilla nisi interdum sit amet. Quisque feugiat neque non sapien feugiat, id tempor lacus venenatis. </p> <p> proin tincidunt scelerisque cursus. Donec facilisis vitae magna at dignissim. Aenean fringilla massa in ligula semper feugiat. Nullam dapibus feugiat tellus id tristique. Sed malesuada tellus in ligula suscipit, a ultrices odio vestibulum. Fusce bibendum neque at cursus gravida. Cras ullamcorper, nunc id tincidunt rhoncus, erat elit mollis dolor, at fermentum odio nisi quis ex. </p> <p> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Nam et fermentum libero. In ultricies libero non venenatis facilisis. Suspendisse potenti. Nunc id nunc et mauris malesuada consectetur. Sed fermentum vestibulum metus ut varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; nunc sagittis augue at neque commodo, vel egestas purus pharetra. Suspendisse potenti. Nulla facilisi. </p>",
+    "imageSrc": "https://miro.medium.com/v2/resize:fit:1400/1*BPSx-c--z6r7tY29L19ukQ.png",
+    "slug":"how-to-learn-javascript"
+}
