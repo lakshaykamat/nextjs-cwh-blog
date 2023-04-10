@@ -22,6 +22,7 @@ const PostPage = ({allBlogs}) => {
             title={post.title}
             author={post.author}
             date={post.date}
+            description={post.description}
             imageSrc={post.imageSrc}
           />
         ))}
